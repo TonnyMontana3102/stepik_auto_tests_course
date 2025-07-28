@@ -1,9 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 import unittest
 
-print("Start tests")
 
 link1 = "https://suninjuly.github.io/registration1.html"
 link2 = "https://suninjuly.github.io/registration2.html"
@@ -12,7 +10,7 @@ link2 = "https://suninjuly.github.io/registration2.html"
 def testik(link):
         browser = webdriver.Chrome()
         browser.get(link)
-        browser.implicitly_wait(5)
+        browser.implicitly_wait(10)
 
         input1 = browser.find_element(By.CSS_SELECTOR, "input[placeholder='Input your first name']")
         input1.send_keys("John")
@@ -39,4 +37,3 @@ class TestForTest(unittest.TestCase):
 
 if __name__ == "__main__":
     print("Start tests")
-    unittest.main()

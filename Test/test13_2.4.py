@@ -5,28 +5,28 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import math
 
-link = "http://suninjuly.github.io/explicit_wait2.html"
+if __name__ == "__main__":
+    link = "http://suninjuly.github.io/explicit_wait2.html"
 
-def calc(x):
-    return str(math.log(abs(12*math.sin(int(x)))))
+    def calc(x):
+        return str(math.log(abs(12*math.sin(int(x)))))
 
-try:
-    browser= webdriver.Chrome()
-    browser.get(link)
-    browser.implicitly_wait(5)  
+    try:
+        browser= webdriver.Chrome()
+        browser.get(link)
+        browser.implicitly_wait(5)  
 
-    button = WebDriverWait(browser, 12).until(EC.text_to_be_present_in_element((By.ID, "price"), "$100"))
+        button = WebDriverWait(browser, 12).until(EC.text_to_be_present_in_element((By.ID, "price"), "$100"))
 
-    book = browser.find_element(By.ID, "book").click()
+        book = browser.find_element(By.ID, "book").click()
 
-    numb = browser.find_element(By.ID, "input_value").text
-    
-    inp_area = browser.find_element(By.ID, "answer")
-    inp_area.send_keys(calc(numb))
+        numb = browser.find_element(By.ID, "input_value").text
+        
+        inp_area = browser.find_element(By.ID, "answer")
+        inp_area.send_keys(calc(numb))
 
-    submit = browser.find_element(By.ID, "solve").click()
+        submit = browser.find_element(By.ID, "solve").click()
 
 
-finally:
-   time.sleep(10)
-   browser.quit()
+    finally:
+        browser.quit()
