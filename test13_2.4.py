@@ -26,7 +26,6 @@ try:
 
     submit = browser.find_element(By.ID, "solve").click()
 
- #111111111111111111
 
 finally:
    time.sleep(10)
