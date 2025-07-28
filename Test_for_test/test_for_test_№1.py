@@ -6,7 +6,7 @@ import unittest
 link1 = "https://suninjuly.github.io/registration1.html"
 link2 = "https://suninjuly.github.io/registration2.html"
 
-def test(lint):
+def test(link):
         browser = webdriver.Chrome()
         browser.get(link)
         input1 = browser.find_element(By.CSS_SELECTOR, "input[placeholder='Input your first name']")
