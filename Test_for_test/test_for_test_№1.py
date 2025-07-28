@@ -1,11 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-import time
 import unittest
+
+print("Start tests")
 
 link1 = "https://suninjuly.github.io/registration1.html"
 link2 = "https://suninjuly.github.io/registration2.html"
+
 
 def testik(link):
         browser = webdriver.Chrome()
@@ -27,6 +29,7 @@ def testik(link):
         button.click()
         
         browser.quit()
+        return("Congratulations! You have successfully registered!")
 
 class TestForTest(unittest.TestCase):   
     def test_link1(self):
